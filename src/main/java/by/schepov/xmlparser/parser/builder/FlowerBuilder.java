@@ -143,6 +143,7 @@ public class FlowerBuilder {
                 }
                 visualDescriptionBuilder.build(descriptionList.item(i));
             }
+            flower.setVisualDescription(visualDescriptionBuilder.getResult());
         } catch (VisualDescriptionBuilderException e) {
             throw new FlowerBuilderException(e);
         }
