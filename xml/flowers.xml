@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flowers xmlns="http://example.org/flowers">
+
+    <flower id="ID1">
+        <name>Rose</name>
+        <soil>ground</soil>
+        <origin>England</origin>
+        <visual_parameters>
+            <average_size>70</average_size>
+            <leaves_colour>various</leaves_colour>
+            <stem_colour>green</stem_colour>
+        </visual_parameters>
+        <growing_tips>
+            <weekly_watering>700</weekly_watering>
+            <growth_temperature>22</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+        </growing_tips>
+        <multiplying>stalk</multiplying>
+    </flower>
+
+    <flower id="ID2">
+        <name>Orchid</name>
+        <soil>sod-podzolic</soil>
+        <origin>Italy</origin>
+        <visual_parameters>
+            <leaves_colour>various</leaves_colour>
+            <average_size>25</average_size>
+            <stem_colour>green</stem_colour>
+        </visual_parameters>
+        <growing_tips>
+            <growth_temperature>21</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+            <weekly_watering>430</weekly_watering>
+        </growing_tips>
+        <multiplying>seed</multiplying>
+    </flower>
+
+    <flower id="ID3">
+        <name>Tulip</name>
+        <soil>humus</soil>
+        <origin>Netherlands</origin>
+        <visual_parameters>
+            <leaves_colour>various</leaves_colour>
+            <stem_colour>green</stem_colour>
+            <average_size>40</average_size>
+        </visual_parameters>
+        <growing_tips>
+            <weekly_watering>500</weekly_watering>
+            <growth_temperature>22</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+        </growing_tips>
+        <multiplying>seed</multiplying>
+    </flower>
+
+    <flower id="ID4">
+        <name>Sunflower</name>
+        <soil>podzolic</soil>
+        <origin>Brazil</origin>
+        <visual_parameters>
+            <leaves_colour>yellow</leaves_colour>
+            <stem_colour>green</stem_colour>
+            <average_size>150</average_size>
+        </visual_parameters>
+        <growing_tips>
+            <weekly_watering>500</weekly_watering>
+            <growth_temperature>25</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+        </growing_tips>
+        <multiplying>seed</multiplying>
+    </flower>
+
+    <flower id="ID5">
+        <name>Forget-me-not</name>
+        <soil>humus</soil>
+        <origin>France</origin>
+        <visual_parameters>
+            <leaves_colour>various</leaves_colour>
+            <stem_colour>green</stem_colour>
+            <average_size>15</average_size>
+        </visual_parameters>
+        <growing_tips>
+            <growth_temperature>20</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+            <weekly_watering>500</weekly_watering>
+        </growing_tips>
+        <multiplying>seed</multiplying>
+    </flower>
+
+    <flower id="ID6">
+        <name>Anemone</name>
+        <soil>sod-podzolic</soil>
+        <origin>England</origin>
+        <visual_parameters>
+            <leaves_colour>various</leaves_colour>
+            <stem_colour>green</stem_colour>
+            <average_size>77</average_size>
+        </visual_parameters>
+        <growing_tips>
+            <weekly_watering>500</weekly_watering>
+            <growth_temperature>25</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+        </growing_tips>
+        <multiplying>stalk</multiplying>
+    </flower>
+
+    <poisonous_flower id="ID7" danger_level="medium">
+        <name>Meconopsis</name>
+        <soil>ground</soil>
+        <origin>Chile</origin>
+        <visual_parameters>
+            <leaves_colour>purple</leaves_colour>
+            <stem_colour>green</stem_colour>
+            <average_size>50</average_size>
+        </visual_parameters>
+        <growing_tips>
+            <weekly_watering>500</weekly_watering>
+            <growth_temperature>27</growth_temperature>
+            <is_photophilous>1</is_photophilous>
+        </growing_tips>
+        <multiplying>stalk</multiplying>
+    </poisonous_flower>
+
+</flowers>

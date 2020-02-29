@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://example.org/flowers"
+        targetNamespace="http://example.org/flowers"
+        elementFormDefault="qualified">
+
+    <element name="flowers">
+        <complexType>
+            <sequence>
+                <element name = "flower" type = "tns:flower" minOccurs="6" maxOccurs="unbounded"/>
+                <element name="poisonous_flower" type="tns:poisonous_flower" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+
+    <complexType name="flower">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="soil" type="tns:soil"/>
+            <element name="origin" type="string"/>
+            <element name="visual_parameters" type="tns:visuals"/>
+            <element name="growing_tips" type="tns:growing_tips"/>
+            <element name="multiplying" type="tns:multiplying"/>
+        </sequence>
+        <attribute name="id" type="tns:id" use="required"/>
+        <attribute name="wild_only" type="boolean" use="optional"/>
+    </complexType>
+
+    <complexType name="poisonous_flower">
+        <complexContent>
+            <extension base="tns:flower">
+                <attribute name="danger_level" type="tns:danger_level" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="visuals">
+        <all>
+            <element name="leaves_colour" type="tns:colour"/>
+            <element name="stem_colour" type="tns:colour"/>
+            <element name="average_size" type="nonNegativeInteger"/>
+        </all>
+    </complexType>
+
+    <complexType name="growing_tips">
+        <all>
+            <element name="growth_temperature" type="double" />
+            <element name="is_photophilous" type="boolean" />
+            <element name="weekly_watering" type="nonNegativeInteger"/>
+        </all>
+    </complexType>
+
+    <simpleType name="colour">
+        <restriction base="string">
+            <enumeration value="black"/>
+            <enumeration value="white"/>
+            <enumeration value="red"/>
+            <enumeration value="green"/>
+            <enumeration value="yellow"/>
+            <enumeration value="brown"/>
+            <enumeration value="purple"/>
+            <enumeration value="violet"/>
+            <enumeration value="orange"/>
+            <enumeration value="burgundy"/>
+            <enumeration value="various"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="multiplying">
+        <restriction base="string">
+            <enumeration value="stalk"/>
+            <enumeration value="leaf"/>
+            <enumeration value="seed"/>
+        </restriction>
+    </simpleType>
+    
+    <simpleType name="soil">
+        <restriction base="string">
+            <enumeration value="humus"/>
+            <enumeration value="podzolic"/>
+            <enumeration value="sod-podzolic"/>
+            <enumeration value="ground"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="id">
+        <restriction base="ID">
+            <pattern value="ID\d+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="danger_level">
+        <restriction base="string">
+            <enumeration value="low"/>
+            <enumeration value="medium"/>
+            <enumeration value="high"/>
+        </restriction>
+    </simpleType>
+</schema>
