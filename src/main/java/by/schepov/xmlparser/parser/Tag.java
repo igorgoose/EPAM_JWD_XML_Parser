@@ -3,7 +3,7 @@ package by.schepov.xmlparser.parser;
 public enum Tag {
     FLOWER("flower"),
     POISONOUS_FLOWER("poisonous_flower"),
-
+    FLOWERS("flowers"),
 
     NAME("name"),
     SOIL("soil"),
@@ -22,7 +22,9 @@ public enum Tag {
     AVERAGE_SIZE("average_size"),
 
     ID("id"),
-    DANGER_LEVEL("danger_level");
+    DANGER_LEVEL("danger_level"),
+
+    NONE("");
 
 
 

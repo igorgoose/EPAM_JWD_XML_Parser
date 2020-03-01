@@ -1,5 +1,9 @@
-package by.schepov.xmlparser.parser.builder;
+package by.schepov.xmlparser.dispatcher.dom.impl;
 
+import by.schepov.xmlparser.builder.FlowerBuilder;
+import by.schepov.xmlparser.dispatcher.dom.DOMFlowerDispatcher;
+import by.schepov.xmlparser.dispatcher.dom.DOMGrowingTipBuilderDispatcher;
+import by.schepov.xmlparser.dispatcher.dom.DOMVisualDescriptionBuilderDispatcher;
 import by.schepov.xmlparser.entity.*;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.GrowingTipBuilderException;
@@ -14,19 +18,17 @@ import java.util.regex.Pattern;
 
 import static by.schepov.xmlparser.parser.Tag.*;
 
-public class FlowerBuilder {
-    private Flower flower;
-    private GrowingTipBuilder growingTipBuilder;
-    private VisualDescriptionBuilder visualDescriptionBuilder;
+public class DOMFlowerBuilderDispatcher implements DOMFlowerDispatcher {
+    private FlowerBuilder flowerBuilder = new FlowerBuilder();
+    private DOMGrowingTipBuilderDispatcher growingTipBuilderDispatcher = new DOMGrowingTipBuilderDispatcher();
+    private DOMVisualDescriptionBuilderDispatcher visualDescriptionBuilderDispatcher = new DOMVisualDescriptionBuilderDispatcher();
     private Pattern ignorePattern = Pattern.compile(XMLNamesRegex.IGNORED_TAG.getRegex());
     private static final int ID_START_INDEX = 2;
 
-    public FlowerBuilder() {
-        growingTipBuilder = new GrowingTipBuilder();
-        visualDescriptionBuilder = new VisualDescriptionBuilder();
+    public DOMFlowerBuilderDispatcher() {
     }
 
-
+    @Override
     public void build(Node node) throws FlowerBuilderException {
         Tag tag = Tag.getTagByValue(node.getNodeName());
         switch (tag) {
@@ -55,7 +57,7 @@ public class FlowerBuilder {
                 setGrowingTip(node);
                 break;
             case VISUAL_PARAMETERS:
-                setVisualDescription(node);
+                createVisualDescription(node);
                 break;
             default:
                 throw new FlowerBuilderException("Invalid tag");
@@ -63,57 +65,45 @@ public class FlowerBuilder {
     }
 
     private void createFlower() {
-        flower = new Flower();
+        flowerBuilder.createFlower();
     }
 
     private void createPoisonousFlower() {
-        flower = new PoisonousFlower();
+        flowerBuilder.createPoisonousFlower();
     }
 
     private void setID(String id) throws FlowerBuilderException {
-        checkFlower();
-        flower.setId(Integer.parseInt(id.substring(ID_START_INDEX)));
+        flowerBuilder.setID(Integer.parseInt(id.substring(ID_START_INDEX)));
     }
 
     private void setName(String name) throws FlowerBuilderException {
-        checkFlower();
-        flower.setName(name);
+        flowerBuilder.setName(name);
     }
 
     private void setSoil(Soil soil) throws FlowerBuilderException {
-        checkFlower();
-        flower.setSoilType(soil);
+        flowerBuilder.setSoil(soil);
     }
 
     private void setOrigin(String origin) throws FlowerBuilderException {
-        checkFlower();
-        flower.setOrigin(origin);
+        flowerBuilder.setOrigin(origin);
     }
 
-    private void setVisualDescription(VisualDescription visualDescription) throws FlowerBuilderException {
-        checkFlower();
-        flower.setVisualDescription(visualDescription);
+    private void createVisualDescription(VisualDescription visualDescription) throws FlowerBuilderException {
+        flowerBuilder.setVisualDescription(visualDescription);
     }
 
     private void setMultiplyingType(MultiplyingType multiplyingType) throws FlowerBuilderException {
-        checkFlower();
-        flower.setMultiplyingType(multiplyingType);
+        flowerBuilder.setMultiplyingType(multiplyingType);
     }
 
     private void setDangerLevel(DangerLevel dangerLevel) throws FlowerBuilderException {
-        checkFlower();
-        if (flower instanceof PoisonousFlower) {
-            ((PoisonousFlower) flower).setDangerLevel(dangerLevel);
-            return;
-        }
-        throw new FlowerBuilderException("Wrong flower type");
+        flowerBuilder.setDangerLevel(dangerLevel);
     }
 
     private void setGrowingTip(Node tips) throws FlowerBuilderException {
-        checkFlower();
         NodeList tipList = tips.getChildNodes();
         int tipListLength = tipList.getLength();
-        growingTipBuilder.createGrowingTip();
+        growingTipBuilderDispatcher.createGrowingTip();
         try {
             for (int i = 0; i < tipListLength; i++) {
                 Node tip = tipList.item(i);
@@ -121,19 +111,18 @@ public class FlowerBuilder {
                 if (matcher.matches()) {
                     continue;
                 }
-                growingTipBuilder.build(tip);
+                growingTipBuilderDispatcher.build(tip);
             }
-            flower.setGrowingTip(growingTipBuilder.getResult());
+            flowerBuilder.setGrowingTip(growingTipBuilderDispatcher.getResult());
         } catch (GrowingTipBuilderException e) {
             throw new FlowerBuilderException(e);
         }
     }
 
-    private void setVisualDescription(Node visualDescriptionNode) throws FlowerBuilderException {
-        checkFlower();
+    private void createVisualDescription(Node visualDescriptionNode) throws FlowerBuilderException {
         NodeList descriptionList = visualDescriptionNode.getChildNodes();
         int descriptionListLength = descriptionList.getLength();
-        visualDescriptionBuilder.createVisualDescription();
+        visualDescriptionBuilderDispatcher.createVisualDescription();
         try {
             for (int i = 0; i < descriptionListLength; i++) {
                 Node description = descriptionList.item(i);
@@ -141,24 +130,16 @@ public class FlowerBuilder {
                 if (matcher.matches()) {
                     continue;
                 }
-                visualDescriptionBuilder.build(descriptionList.item(i));
+                visualDescriptionBuilderDispatcher.build(descriptionList.item(i));
             }
-            flower.setVisualDescription(visualDescriptionBuilder.getResult());
+            flowerBuilder.setVisualDescription(visualDescriptionBuilderDispatcher.getResult());
         } catch (VisualDescriptionBuilderException e) {
             throw new FlowerBuilderException(e);
         }
     }
 
-    private void checkFlower() throws FlowerBuilderException {
-        if (flower == null) {
-            throw new FlowerBuilderException("Flower is not created");
-        }
-    }
-
+    @Override
     public Flower getResult() throws FlowerBuilderException {
-        if (flower == null) {
-            throw new FlowerBuilderException("Flower is not created");
-        }
-        return flower;
+        return flowerBuilder.getResult();
     }
 }

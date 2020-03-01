@@ -1,11 +1,12 @@
-package by.schepov.xmlparser.parser.impl;
+package by.schepov.xmlparser.parser.impl.dom;
 
+import by.schepov.xmlparser.dispatcher.dom.DOMFlowerDispatcher;
 import by.schepov.xmlparser.parser.XMLNamesRegex;
-import by.schepov.xmlparser.parser.builder.FlowerBuilder;
 import by.schepov.xmlparser.entity.Flower;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.ParserException;
 import by.schepov.xmlparser.parser.FlowerParser;
+import by.schepov.xmlparser.dispatcher.dom.impl.DOMFlowerBuilderDispatcher;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -23,19 +24,22 @@ import java.util.regex.Pattern;
 public class DOMFlowerParser implements FlowerParser {
 
 
-    private DocumentBuilderFactory documentBuilderFactory;
     private DocumentBuilder documentBuilder;
-    private FlowerBuilder flowerBuilder;
+    private DOMFlowerDispatcher dispatcher;
     Pattern ignorePattern = Pattern.compile(XMLNamesRegex.IGNORED_TAG.getRegex());
 
     public DOMFlowerParser() throws ParserException {
-        documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
             documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            flowerBuilder = new FlowerBuilder();
+            dispatcher = new DOMFlowerBuilderDispatcher();
         } catch (ParserConfigurationException e) {
             throw new ParserException(e);
         }
+    }
+
+    public DOMFlowerParser(DOMFlowerDispatcher dispatcher){
+        this.dispatcher = dispatcher;
     }
 
     @Override
@@ -54,7 +58,7 @@ public class DOMFlowerParser implements FlowerParser {
                     continue;
                 }
 
-                flowerBuilder.build(flowerNode);
+                dispatcher.build(flowerNode);
                 NodeList fieldNodes = flowerNode.getChildNodes();
                 int fieldNodesLength = fieldNodes.getLength();
                 for (int j = 0; j < fieldNodesLength; j++) {
@@ -62,9 +66,9 @@ public class DOMFlowerParser implements FlowerParser {
                     if(isIrrelevantTag(currentFieldNode)){
                         continue;
                     }
-                    flowerBuilder.build(currentFieldNode);
+                    dispatcher.build(currentFieldNode);
                 }
-                flowers.add(flowerBuilder.getResult());
+                flowers.add(dispatcher.getResult());
             }
             return flowers;
         } catch (SAXException | IOException | FlowerBuilderException e) {

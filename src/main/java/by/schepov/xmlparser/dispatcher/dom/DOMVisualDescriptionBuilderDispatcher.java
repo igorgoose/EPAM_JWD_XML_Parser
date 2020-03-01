@@ -1,4 +1,4 @@
-package by.schepov.xmlparser.parser.builder;
+package by.schepov.xmlparser.dispatcher.dom;
 
 import by.schepov.xmlparser.entity.Colour;
 import by.schepov.xmlparser.entity.VisualDescription;
@@ -6,10 +6,10 @@ import by.schepov.xmlparser.exception.VisualDescriptionBuilderException;
 import by.schepov.xmlparser.parser.Tag;
 import org.w3c.dom.Node;
 
-public class VisualDescriptionBuilder {
-    VisualDescription visualDescription;
+public class DOMVisualDescriptionBuilderDispatcher {
+    private VisualDescription visualDescription;
 
-    public VisualDescriptionBuilder() {
+    public DOMVisualDescriptionBuilderDispatcher() {
 
     }
 

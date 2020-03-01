@@ -1,14 +1,14 @@
-package by.schepov.xmlparser.parser.builder;
+package by.schepov.xmlparser.dispatcher.dom;
 
 import by.schepov.xmlparser.entity.GrowingTip;
 import by.schepov.xmlparser.exception.GrowingTipBuilderException;
 import by.schepov.xmlparser.parser.Tag;
 import org.w3c.dom.Node;
 
-public class GrowingTipBuilder {
-    GrowingTip growingTip;
+public class DOMGrowingTipBuilderDispatcher {
+    private GrowingTip growingTip;
 
-    public GrowingTipBuilder(){
+    public DOMGrowingTipBuilderDispatcher(){
 
     }
 
