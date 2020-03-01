@@ -2,6 +2,7 @@
 ## ignoring target file
 target/
 .idea/
+log/
 
 ### Maven ###
 pom.xml.tag
