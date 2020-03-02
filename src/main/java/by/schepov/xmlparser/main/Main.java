@@ -33,14 +33,6 @@ public class Main {
             for (Flower flower : SAXFlowers) {
                 System.out.println(flower);
             }
-//            InputStream is = new FileInputStream("xml/flowers.xml");
-//            XMLStreamReader reader = XMLInputFactory.newFactory().createXMLStreamReader(is);
-//            while(reader.hasNext()){
-//                int event = reader.next();
-//                if(event == XMLStreamReader.START_ELEMENT) {
-//                    System.out.println(reader.getLocalName());
-//                }
-//            }
             System.out.println("______StAX______________________________________");
             StAXFlowerParser stAXFlowerParser = new StAXFlowerParser();
             List<Flower> staxFlowers = stAXFlowerParser.parse(file);
