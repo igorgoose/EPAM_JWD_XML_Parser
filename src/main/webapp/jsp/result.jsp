@@ -12,5 +12,6 @@
 </head>
 <body>
     <p>Result = ${result}</p>
+    <p>File = ${param.get("file")}</p>
 </body>
 </html>

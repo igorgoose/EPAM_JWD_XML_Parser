@@ -1,7 +1,8 @@
 package by.schepov.xmlparser.page;
 
 public enum RequestAttributeName {
-    RESULT("result");
+    RESULT("result"),
+    FILE("file");
 
     private String value;
 

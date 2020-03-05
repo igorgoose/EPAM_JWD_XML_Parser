@@ -3,9 +3,9 @@ package by.schepov.xmlparser.controller;
 import by.schepov.xmlparser.command.Command;
 import by.schepov.xmlparser.page.JSPElementName;
 import by.schepov.xmlparser.factory.command.CommandFactory;
-import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/controller")
+@MultipartConfig(maxFileSize = 10240)
 public class ControllerServlet extends HttpServlet {
 
-    private static final Logger LOGGER = Logger.getLogger(ControllerServlet.class);
     private static final CommandFactory COMMAND_FACTORY = CommandFactory.INSTANCE;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LOGGER.info("doGet");
         req.getRequestDispatcher("/jsp/result.jsp").forward(req, resp);
     }
 

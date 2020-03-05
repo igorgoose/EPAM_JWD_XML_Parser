@@ -1,7 +1,7 @@
 package by.schepov.xmlparser.page;
 
 public enum Page {
-    RESULT("/jsp/result.jsp"), ERROR("/jsp/error.jsp");
+    RESULT("/jsp/result.jsp"), ERROR("/jsp/error.jsp"), HOME("index.jsp");
 
     private String value;
 

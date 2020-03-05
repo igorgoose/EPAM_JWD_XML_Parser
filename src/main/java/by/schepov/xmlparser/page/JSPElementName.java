@@ -1,7 +1,8 @@
 package by.schepov.xmlparser.page;
 
 public enum JSPElementName {
-    COMMAND("command");
+    COMMAND("command"),
+    FILE("file");
 
     private String value;
 

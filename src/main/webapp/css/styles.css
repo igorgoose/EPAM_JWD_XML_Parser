@@ -1,3 +1,67 @@
+
 .my-flex-container{
+    align-content: center;
+    border: 1px solid black;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 4%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.my-flex-block{
     display: flex;
+    /*border: 1px solid black;*/
+    /*width: 35%;*/
+    height: 30%;
+}
+
+.my-flex-block_file{
+    display: flex;
+    /*border: 1px solid black;*/
+    /*width: 50%;*/
+}
+
+.my-flex-block_radio{
+    display: flex;
+    /*border: 1px solid black;*/
+    width: 15%;
+}
+
+
+
+.input_item_radio{
+    /*display: flex;*/
+    border-radius: 10%;
+    background: #b6f0f0; /* Цвет фона */
+    margin: 10px;
+    /*border: 1px solid black; !* Параметры рамки *!*/
+    padding: 5px; /* Поля вокруг текста */
+    height: 30%;
+}
+
+.input_item_file{
+    border-radius: 3%;
+    background: #b6f0f0; /* Цвет фона */
+    margin: 10px;
+    border: 1px solid black; /* Параметры рамки */
+    padding: 5px; /* Поля вокруг текста */
+    /*height: 30%;*/
+}
+
+.radio_label{
+    /*border: 1px solid black;*/
+    margin-top: 10px;
+    font: 100% Consolas;
+    height: 20%;
+}
+
+.input_item_submit{
+    border-radius: 15%;
+    background: #b6f0f0;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    height: 50%;
 }

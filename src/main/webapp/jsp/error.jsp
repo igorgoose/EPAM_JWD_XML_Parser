@@ -11,6 +11,6 @@
     <title>Error</title>
 </head>
 <body>
-    <h1>ERROR</h1>
+    <h1>ERROR  ${pageContext.errorData.statusCode} </h1>
 </body>
 </html>
