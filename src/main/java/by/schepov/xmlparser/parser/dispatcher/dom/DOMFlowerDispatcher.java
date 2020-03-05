@@ -1,7 +1,7 @@
-package by.schepov.xmlparser.dispatcher.dom;
+package by.schepov.xmlparser.parser.dispatcher.dom;
 
 
-import by.schepov.xmlparser.dispatcher.FlowerDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.FlowerDispatcher;
 import by.schepov.xmlparser.entity.Flower;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import org.w3c.dom.Node;

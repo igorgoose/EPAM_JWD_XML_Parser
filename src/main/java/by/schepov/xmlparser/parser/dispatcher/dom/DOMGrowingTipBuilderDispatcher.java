@@ -1,4 +1,4 @@
-package by.schepov.xmlparser.dispatcher.dom;
+package by.schepov.xmlparser.parser.dispatcher.dom;
 
 import by.schepov.xmlparser.entity.GrowingTip;
 import by.schepov.xmlparser.exception.GrowingTipBuilderException;

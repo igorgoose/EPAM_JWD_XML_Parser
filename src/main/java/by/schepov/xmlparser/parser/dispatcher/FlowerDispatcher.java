@@ -1,4 +1,4 @@
-package by.schepov.xmlparser.dispatcher;
+package by.schepov.xmlparser.parser.dispatcher;
 
 import by.schepov.xmlparser.entity.Flower;
 import by.schepov.xmlparser.exception.FlowerBuilderException;

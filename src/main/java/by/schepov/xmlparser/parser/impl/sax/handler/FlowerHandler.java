@@ -1,7 +1,7 @@
 package by.schepov.xmlparser.parser.impl.sax.handler;
 
-import by.schepov.xmlparser.dispatcher.sax.impl.SAXFlowerBuilderDispatcher;
-import by.schepov.xmlparser.dispatcher.sax.SAXFlowerDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.sax.impl.SAXFlowerBuilderDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.sax.SAXFlowerDispatcher;
 import by.schepov.xmlparser.entity.Flower;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.FlowerDispatcherException;
