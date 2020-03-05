@@ -1,12 +1,12 @@
 package by.schepov.xmlparser.parser.impl.dom;
 
-import by.schepov.xmlparser.dispatcher.dom.DOMFlowerDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.dom.DOMFlowerDispatcher;
 import by.schepov.xmlparser.parser.XMLNamesRegex;
 import by.schepov.xmlparser.entity.Flower;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.ParserException;
 import by.schepov.xmlparser.parser.FlowerParser;
-import by.schepov.xmlparser.dispatcher.dom.impl.DOMFlowerBuilderDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.dom.impl.DOMFlowerBuilderDispatcher;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

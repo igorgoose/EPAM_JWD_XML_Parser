@@ -1,9 +1,9 @@
-package by.schepov.xmlparser.dispatcher.sax.impl;
+package by.schepov.xmlparser.parser.dispatcher.sax.impl;
 
 import by.schepov.xmlparser.builder.FlowerBuilder;
 import by.schepov.xmlparser.builder.GrowingTipBuilder;
 import by.schepov.xmlparser.builder.VisualDescriptionBuilder;
-import by.schepov.xmlparser.dispatcher.sax.SAXFlowerDispatcher;
+import by.schepov.xmlparser.parser.dispatcher.sax.SAXFlowerDispatcher;
 import by.schepov.xmlparser.entity.*;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.FlowerDispatcherException;

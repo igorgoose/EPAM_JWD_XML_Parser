@@ -12,18 +12,15 @@ import by.schepov.xmlparser.parser.FlowerParser;
 import by.schepov.xmlparser.parser.Tag;
 import by.schepov.xmlparser.parser.impl.stax.processor.StAXStreamProcessor;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StAXFlowerParser implements FlowerParser {
 
-    private StAXStreamProcessor processor;
     private FlowerBuilder flowerBuilder = new FlowerBuilder();
     private GrowingTipBuilder growingTipBuilder = new GrowingTipBuilder();
     private VisualDescriptionBuilder visualDescriptionBuilder = new VisualDescriptionBuilder();
@@ -37,7 +34,7 @@ public class StAXFlowerParser implements FlowerParser {
     @Override
     public List<Flower> parse(String filepath) throws ParserException {
         try {
-            processor = new StAXStreamProcessor(new FileInputStream(filepath));
+            StAXStreamProcessor processor = new StAXStreamProcessor(new FileInputStream(filepath));
             List<Flower> flowers = new ArrayList<>();
             Tag currentTag;
             String idString;
