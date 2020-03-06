@@ -16,7 +16,7 @@
     <form name="parserform" action="controller" method="POST" enctype='multipart/form-data'>
         <div class="my-flex-block" >
             <div class="my-flex-block_file">
-                <input class="input_item_file" type="file" name="file" id="file" readonly>
+                <input class="input_item_file" type="file" name="file" id="file" accept=".xml" readonly>
             </div>
         </div>
         <div class="my-flex-block" style="height: 30px">

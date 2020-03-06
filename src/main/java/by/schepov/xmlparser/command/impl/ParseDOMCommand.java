@@ -1,41 +1,28 @@
 package by.schepov.xmlparser.command.impl;
 
-import by.schepov.xmlparser.command.Command;
-import by.schepov.xmlparser.entity.Flower;
+import by.schepov.xmlparser.command.ParserCommand;
 import by.schepov.xmlparser.exception.ParserException;
-import by.schepov.xmlparser.page.JSPElementName;
+import by.schepov.xmlparser.exception.ParserServiceException;
 import by.schepov.xmlparser.page.Page;
 import by.schepov.xmlparser.page.RequestAttributeName;
-import by.schepov.xmlparser.parser.FlowerParser;
-import by.schepov.xmlparser.parser.dispatcher.dom.impl.DOMFlowerBuilderDispatcher;
 import by.schepov.xmlparser.parser.impl.dom.DOMFlowerParser;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import org.apache.log4j.Logger;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
 
-public class ParseDOMCommand implements Command {
+public class ParseDOMCommand extends ParserCommand {
+
+    private static final Logger LOGGER = Logger.getLogger(ParseDOMCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
-            Part filePart = request.getPart(JSPElementName.FILE.getValue());
-            InputStream inputStream = filePart.getInputStream();
-            FlowerParser parser = new DOMFlowerParser(new DOMFlowerBuilderDispatcher());
-            List<Flower> flowers = parser.parse(inputStream);
-            request.setAttribute(RequestAttributeName.RESULT.getValue(), flowers);
+            request.setAttribute(RequestAttributeName.RESULT.getValue(),
+                    PARSER_SERVICE.getParsedData(request, new DOMFlowerParser()));
             return Page.RESULT.getValue();
-        } catch (IOException | ServletException | ParserException e) {
-            e.printStackTrace();
+        } catch (ParserException | ParserServiceException e) {
+            LOGGER.error(e);
         }
         return Page.ERROR.getValue();
     }

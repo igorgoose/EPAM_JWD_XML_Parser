@@ -11,7 +11,7 @@
     <title>Error</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/error_styles.css">
 </head>
-<body style="background-image: url(${pageContext.request.contextPath}/img/background_error.jpg)">
+<body style="background-image: url(${pageContext.request.contextPath}/img/background_error_reverse.jpg)">
 <div class="error-message-container">
     <p>Error</p>
     <p>Status: ${pageContext.errorData.statusCode}</p>

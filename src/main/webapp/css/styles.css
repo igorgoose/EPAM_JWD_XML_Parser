@@ -1,11 +1,12 @@
 .my-flex-container{
-    /*border: 1px solid black;*/
+    border: 1px solid black;
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 4%;
     height: 220px;
     border-radius: 10px;
     background-color: #dfebce;
+    font: 16px Consolas;
 }
 
 .my-flex-block{
@@ -45,7 +46,6 @@
 .radio_label{
     /*border: 1px solid black;*/
     margin-top: 10px;
-    font: 16px Consolas;
     height: 20%;
 }
 
