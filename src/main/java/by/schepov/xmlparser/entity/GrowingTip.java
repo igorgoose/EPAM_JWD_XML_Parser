@@ -3,20 +3,20 @@ package by.schepov.xmlparser.entity;
 import java.util.Objects;
 
 public class GrowingTip {
-    boolean isPhotophilous;
-    double growthTemperature;
-    int weeklyWatering;
+    private boolean photophilous;
+    private double growthTemperature;
+    private int weeklyWatering;
 
     public GrowingTip(){
 
     }
 
     public boolean isPhotophilous() {
-        return isPhotophilous;
+        return photophilous;
     }
 
     public void setPhotophilous(boolean photophilous) {
-        isPhotophilous = photophilous;
+        this.photophilous = photophilous;
     }
 
     public double getGrowthTemperature() {
@@ -40,20 +40,20 @@ public class GrowingTip {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GrowingTip that = (GrowingTip) o;
-        return isPhotophilous == that.isPhotophilous &&
+        return photophilous == that.photophilous &&
                 Double.compare(that.growthTemperature, growthTemperature) == 0 &&
                 weeklyWatering == that.weeklyWatering;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isPhotophilous, growthTemperature, weeklyWatering);
+        return Objects.hash(photophilous, growthTemperature, weeklyWatering);
     }
 
     @Override
     public String toString() {
         return "GrowingTip{" +
-                "isPhotophilous=" + isPhotophilous +
+                "isPhotophilous=" + photophilous +
                 ", growthTemperature=" + growthTemperature +
                 ", weeklyWatering=" + weeklyWatering +
                 '}';

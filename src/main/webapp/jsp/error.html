@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="../css/error_styles.css">
+</head>
+<body style="background-image: url(../img/background_error.jpg)">
+<div class="error-message-container">
+    <p>Error</p>
+    <p>Status: ${pageContext.errorData.statusCode}</p>
+    <p>Request URI: ${pageContext.errorData.requestURI}</p>
+    <p>Servlet: ${pageContext.errorData.servletName}</p>
+</div>
+</body>
+</html>

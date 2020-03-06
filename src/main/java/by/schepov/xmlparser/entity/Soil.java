@@ -1,6 +1,6 @@
 package by.schepov.xmlparser.entity;
 
-public enum Soil {
+public enum     Soil {
     HUMUS("humus"),
     PODZOLIC("podzolic"),
     SOD_PODZOLIC("sod-podzolic"),

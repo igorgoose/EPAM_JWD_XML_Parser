@@ -1,9 +1,14 @@
 package by.schepov.xmlparser.command.impl;
 
 import by.schepov.xmlparser.command.Command;
+import by.schepov.xmlparser.entity.Flower;
+import by.schepov.xmlparser.exception.ParserException;
 import by.schepov.xmlparser.page.JSPElementName;
 import by.schepov.xmlparser.page.Page;
 import by.schepov.xmlparser.page.RequestAttributeName;
+import by.schepov.xmlparser.parser.FlowerParser;
+import by.schepov.xmlparser.parser.dispatcher.dom.impl.DOMFlowerBuilderDispatcher;
+import by.schepov.xmlparser.parser.impl.dom.DOMFlowerParser;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -16,6 +21,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.List;
 
 public class ParseDOMCommand implements Command {
 
@@ -23,10 +29,12 @@ public class ParseDOMCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
             Part filePart = request.getPart(JSPElementName.FILE.getValue());
-
-            request.setAttribute(RequestAttributeName.RESULT.getValue(), "asd");
+            InputStream inputStream = filePart.getInputStream();
+            FlowerParser parser = new DOMFlowerParser(new DOMFlowerBuilderDispatcher());
+            List<Flower> flowers = parser.parse(inputStream);
+            request.setAttribute(RequestAttributeName.RESULT.getValue(), flowers);
             return Page.RESULT.getValue();
-        } catch (IOException | ServletException e) {
+        } catch (IOException | ServletException | ParserException e) {
             e.printStackTrace();
         }
         return Page.ERROR.getValue();

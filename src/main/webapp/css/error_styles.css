@@ -1,0 +1,10 @@
+
+.error-message-container{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid white;
+    font: 20px Consolas;
+    color: #fff9e2;
+    padding-left: 10px;
+}

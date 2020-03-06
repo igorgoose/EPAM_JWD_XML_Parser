@@ -13,7 +13,7 @@
         <growing_tips>
             <weekly_watering>700</weekly_watering>
             <growth_temperature>22</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
         </growing_tips>
         <multiplying>stalk</multiplying>
     </flower>
@@ -29,7 +29,7 @@
         </visual_parameters>
         <growing_tips>
             <growth_temperature>21</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
             <weekly_watering>430</weekly_watering>
         </growing_tips>
         <multiplying>seed</multiplying>
@@ -47,7 +47,7 @@
         <growing_tips>
             <weekly_watering>500</weekly_watering>
             <growth_temperature>22</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
         </growing_tips>
         <multiplying>seed</multiplying>
     </flower>
@@ -64,7 +64,7 @@
         <growing_tips>
             <weekly_watering>500</weekly_watering>
             <growth_temperature>25</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
         </growing_tips>
         <multiplying>seed</multiplying>
     </flower>
@@ -80,7 +80,7 @@
         </visual_parameters>
         <growing_tips>
             <growth_temperature>20</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
             <weekly_watering>500</weekly_watering>
         </growing_tips>
         <multiplying>seed</multiplying>
@@ -98,7 +98,7 @@
         <growing_tips>
             <weekly_watering>500</weekly_watering>
             <growth_temperature>25</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
         </growing_tips>
         <multiplying>stalk</multiplying>
     </flower>
@@ -115,7 +115,7 @@
         <growing_tips>
             <weekly_watering>500</weekly_watering>
             <growth_temperature>27</growth_temperature>
-            <is_photophilous>1</is_photophilous>
+            <is_photophilous>true</is_photophilous>
         </growing_tips>
         <multiplying>stalk</multiplying>
     </poisonous_flower>

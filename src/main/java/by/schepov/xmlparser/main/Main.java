@@ -22,28 +22,28 @@ public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        try {
-            System.out.println("______DOM______________________________________");
-            DOMFlowerParser parser = new DOMFlowerParser();
-            List<Flower> DOMFlowers = parser.parse(file.getPath());
-            for (Flower flower : DOMFlowers) {
-                System.out.println(flower);
-            }
-            System.out.println("______SAX______________________________________");
-            SAXFlowerParser saxFlowerParser = new SAXFlowerParser();
-            List<Flower> SAXFlowers = saxFlowerParser.parse(file.getPath());
-            for (Flower flower : SAXFlowers) {
-                System.out.println(flower);
-            }
-            System.out.println("______StAX______________________________________");
-            StAXFlowerParser stAXFlowerParser = new StAXFlowerParser();
-            List<Flower> staxFlowers = stAXFlowerParser.parse(file.getPath());
-            for (Flower flower : staxFlowers) {
-                System.out.println(flower);
-            }
-        } catch (ParserException e) {
-            LOGGER.error(e);
-        }
+//        try {
+//            System.out.println("______DOM______________________________________");
+//            DOMFlowerParser parser = new DOMFlowerParser();
+//            List<Flower> DOMFlowers = parser.parse(file.getPath());
+//            for (Flower flower : DOMFlowers) {
+//                System.out.println(flower);
+//            }
+//            System.out.println("______SAX______________________________________");
+//            SAXFlowerParser saxFlowerParser = new SAXFlowerParser();
+//            List<Flower> SAXFlowers = saxFlowerParser.parse(file.getPath());
+//            for (Flower flower : SAXFlowers) {
+//                System.out.println(flower);
+//            }
+//            System.out.println("______StAX______________________________________");
+//            StAXFlowerParser stAXFlowerParser = new StAXFlowerParser();
+//            List<Flower> staxFlowers = stAXFlowerParser.parse(file.getPath());
+//            for (Flower flower : staxFlowers) {
+//                System.out.println(flower);
+//            }
+//        } catch (ParserException e) {
+//            LOGGER.error(e);
+//        }
 
     }
 }

@@ -2,8 +2,6 @@ package by.schepov.xmlparser.parser.dispatcher.dom.impl;
 
 import by.schepov.xmlparser.builder.FlowerBuilder;
 import by.schepov.xmlparser.parser.dispatcher.dom.DOMFlowerDispatcher;
-import by.schepov.xmlparser.parser.dispatcher.dom.DOMGrowingTipBuilderDispatcher;
-import by.schepov.xmlparser.parser.dispatcher.dom.DOMVisualDescriptionBuilderDispatcher;
 import by.schepov.xmlparser.entity.*;
 import by.schepov.xmlparser.exception.FlowerBuilderException;
 import by.schepov.xmlparser.exception.GrowingTipBuilderException;

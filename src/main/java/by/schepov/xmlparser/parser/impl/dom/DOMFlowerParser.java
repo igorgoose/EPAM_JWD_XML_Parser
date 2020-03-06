@@ -16,36 +16,42 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class DOMFlowerParser implements FlowerParser {
 
-
+    private static final DocumentBuilderFactory DOCUMENT_BUILDER_FACTORY = DocumentBuilderFactory.newInstance();
     private DocumentBuilder documentBuilder;
     private DOMFlowerDispatcher dispatcher;
     Pattern ignorePattern = Pattern.compile(XMLNamesRegex.IGNORED_TAG.getRegex());
 
     public DOMFlowerParser() throws ParserException {
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
-            documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            documentBuilder = DOCUMENT_BUILDER_FACTORY.newDocumentBuilder();
             dispatcher = new DOMFlowerBuilderDispatcher();
         } catch (ParserConfigurationException e) {
             throw new ParserException(e);
         }
     }
 
-    public DOMFlowerParser(DOMFlowerDispatcher dispatcher){
+    public DOMFlowerParser(DOMFlowerDispatcher dispatcher) throws ParserException {
         this.dispatcher = dispatcher;
+        try {
+            documentBuilder = DOCUMENT_BUILDER_FACTORY.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            throw new ParserException(e);
+        }
     }
 
     @Override
-    public List<Flower> parse(String filepath) throws ParserException {
+    public List<Flower> parse(InputStream inputStream) throws ParserException {
         try {
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(inputStream);
             ArrayList<Flower> flowers = new ArrayList<>();
             Node flowerNode;
             Element root = document.getDocumentElement();

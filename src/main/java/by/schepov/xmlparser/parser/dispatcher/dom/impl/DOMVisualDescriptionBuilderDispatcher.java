@@ -1,4 +1,4 @@
-package by.schepov.xmlparser.parser.dispatcher.dom;
+package by.schepov.xmlparser.parser.dispatcher.dom.impl;
 
 import by.schepov.xmlparser.entity.Colour;
 import by.schepov.xmlparser.entity.VisualDescription;
