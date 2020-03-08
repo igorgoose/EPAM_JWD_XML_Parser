@@ -60,7 +60,7 @@ public class DOMFlowerParser implements FlowerParser {
             int flowerNodeListLength = flowerNodeList.getLength();
             for (int i = 0; i < flowerNodeListLength; i++) {
                 flowerNode = flowerNodeList.item(i);
-                if(isIrrelevantTag(flowerNode)) {
+                if (isIrrelevantTag(flowerNode)) {
                     continue;
                 }
 
@@ -69,7 +69,7 @@ public class DOMFlowerParser implements FlowerParser {
                 int fieldNodesLength = fieldNodes.getLength();
                 for (int j = 0; j < fieldNodesLength; j++) {
                     Node currentFieldNode = fieldNodes.item(j);
-                    if(isIrrelevantTag(currentFieldNode)){
+                    if (isIrrelevantTag(currentFieldNode)) {
                         continue;
                     }
                     dispatcher.build(currentFieldNode);
@@ -78,11 +78,11 @@ public class DOMFlowerParser implements FlowerParser {
             }
             return flowers;
         } catch (SAXException | IOException | FlowerBuilderException e) {
-            throw new ParserException(e);
+            throw new ParserException("Parsing error!", e);
         }
     }
 
-    boolean isIrrelevantTag(Node node){
+    boolean isIrrelevantTag(Node node) {
         return ignorePattern.matcher(node.getNodeName()).matches();
     }
 }

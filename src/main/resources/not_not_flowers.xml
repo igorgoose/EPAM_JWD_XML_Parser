@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fowers xmlns="http://example.org/flowers">
+
+    <fower id="ID1">
+        <name>Rose</name>
+        <soil>ground</soil>
+        <origin>England</origin>
+    </fower>
+
+</fowers>

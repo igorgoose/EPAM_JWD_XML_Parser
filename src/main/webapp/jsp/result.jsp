@@ -12,7 +12,8 @@
     <title>Result</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/result_styles.css">
 </head>
-<body style="background-image: url(${pageContext.request.contextPath}/img/background3.png)">
+<body style="background-image: url(${pageContext.request.contextPath}/img/background3.png);
+        background-repeat: no-repeat; background-size: cover; background-position: center center;">
 <div>
     <table>
         <tr>
@@ -48,7 +49,9 @@
         </c:forEach>
     </table>
 </div>
-
+<div class="home-link-container">
+    <a class = "home-link" href=${pageContext.request.contextPath}/index.jsp>Home</a>
+</div>
 
 </body>
 </html>

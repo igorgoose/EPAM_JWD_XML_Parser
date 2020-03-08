@@ -5,6 +5,35 @@
     margin-right: 10%;
     border: 1px solid white;
     font: 20px Consolas;
-    color: #fff9e2;
+    color: #fff6c2;
     padding-left: 10px;
+}
+
+.home-link-container{
+    height: 100px;
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 45%;
+    /*border: 1px solid black;*/
+}
+
+.home-link {
+    border-radius: 3px;
+    font: 12px Consolas;
+    height: 100px;
+    width: 200px;
+    color:  #36454A;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(top, #e0c984, #e07842 50%, #f3e9dc 50%);
+    background: -o-linear-gradient(top, #e0c984, #e07842 50%, #f3e9dc 50%);
+    background: linear-gradient(to top, #e0c984, #e07842 50%, #f3e9dc 50%);
+    box-shadow: 2px 2px 3px black;
+}
+
+.home-link:hover {
+    background: -webkit-linear-gradient(bottom, #e0c984, #e07842 50%, #f3e9dc 50%);
+    background: -o-linear-gradient(bottom, #e0c984, #e07842 50%, #f3e9dc 50%);
+    background: linear-gradient(to bottom, #e0c984, #e07842 50%, #f3e9dc 50%);
 }

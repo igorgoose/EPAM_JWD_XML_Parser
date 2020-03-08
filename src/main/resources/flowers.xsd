@@ -25,7 +25,7 @@
             <element name="multiplying" type="tns:multiplying"/>
         </sequence>
         <attribute name="id" type="tns:id" use="required"/>
-        <attribute name="wild_only" type="boolean" use="optional"/>
+        <attribute name="wild_only" type="boolean"/>
     </complexType>
 
     <complexType name="poisonous_flower">

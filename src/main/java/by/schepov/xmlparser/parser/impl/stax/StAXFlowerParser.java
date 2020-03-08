@@ -100,7 +100,7 @@ public class StAXFlowerParser implements FlowerParser {
             }
             return flowers;
         } catch (XMLStreamException | FlowerBuilderException | GrowingTipBuilderException | VisualDescriptionBuilderException e) {
-            throw new ParserException(e);
+            throw new ParserException("Parsing error!", e);
         }
     }
 

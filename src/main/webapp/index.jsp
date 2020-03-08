@@ -11,7 +11,7 @@
     <title>XML Parser</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body style="background-image: url(img/background3reverse.png)">
+<body style="background-image: url(img/background3reverse.png); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 <div class="my-flex-container" style="height: 260px">
     <form name="parserform" action="controller" method="POST" enctype='multipart/form-data'>
         <div class="my-flex-block" >

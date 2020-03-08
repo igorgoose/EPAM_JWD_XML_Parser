@@ -23,7 +23,8 @@ public class ParseSAXCommand extends ParserCommand {
             return Page.RESULT.getValue();
         } catch (ParserException | ParserServiceException e) {
             LOGGER.error(e);
+            request.setAttribute(RequestAttributeName.ERROR_MESSAGE.getValue(), e.getMessage());
+            return Page.ERROR.getValue();
         }
-        return Page.ERROR.getValue();
     }
 }

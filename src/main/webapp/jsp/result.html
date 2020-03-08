@@ -4,8 +4,11 @@
 <head>
     <title>Result</title>
     <link rel="stylesheet" href="../css/result_styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body style="background-image: url(../img/background3.png);
+    background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
 <div class="my-table-container">
     <table>
         <tr>
@@ -29,11 +32,6 @@
             <td>${flower.soilType.value}</td>
             <td>${flower.visualDescription.stemColour.value}</td>
             <td>${flower.visualDescription.leavesColour.value}</td>
-            <td>${flower.visualDescription.averageSize}</td>
-            <td>${flower.growingTip.photophilous}</td>
-            <td>${flower.growingTip.growthTemperature}</td>
-            <td>${flower.growingTip.weeklyWatering}</td>
-            <td>${flower.multiplyingType.value}</td>
             <td>${flower.wildOnly}</td>
         </tr>
         <tr>
@@ -43,16 +41,13 @@
             <td>${flower.soilType.value}</td>
             <td>${flower.visualDescription.stemColour.value}</td>
             <td>${flower.visualDescription.leavesColour.value}</td>
-            <td>${flower.visualDescription.averageSize}</td>
-            <td>${flower.growingTip.photophilous}</td>
-            <td>${flower.growingTip.growthTemperature}</td>
-            <td>${flower.growingTip.weeklyWatering}</td>
-            <td>${flower.multiplyingType.value}</td>
             <td>${flower.wildOnly}</td>
         </tr>
     </table>
 </div>
-
+<div class="home-link-container">
+    <a class="home-link" href="index.jsp">Home</a>
+</div>
 
 </body>
 </html>

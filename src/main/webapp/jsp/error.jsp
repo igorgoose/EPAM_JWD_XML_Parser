@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Asus
@@ -11,12 +12,17 @@
     <title>Error</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/error_styles.css">
 </head>
-<body style="background-image: url(${pageContext.request.contextPath}/img/background_error_reverse.jpg)">
+<body style="background-image: url(${pageContext.request.contextPath}/img/background_error_reverse.jpg);
+        background-repeat: no-repeat; background-size: cover; background-position: center center;">
 <div class="error-message-container">
     <p>Error</p>
     <p>Status: ${pageContext.errorData.statusCode}</p>
     <p>Request URI: ${pageContext.errorData.requestURI}</p>
-    <p>Servlet: ${pageContext.errorData.servletName}</p>
+    <p>Message: ${errorMessage}</p>
+
+</div>
+<div class="home-link-container">
+    <a class="home-link" href=${pageContext.request.contextPath}/index.jsp>Home</a>
 </div>
 
 </body>

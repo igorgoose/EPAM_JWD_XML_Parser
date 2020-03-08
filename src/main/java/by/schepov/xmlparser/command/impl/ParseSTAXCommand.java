@@ -22,7 +22,8 @@ public class ParseSTAXCommand extends ParserCommand {
             return Page.RESULT.getValue();
         } catch (ParserServiceException e) {
             LOGGER.error(e);
+            request.setAttribute(RequestAttributeName.ERROR_MESSAGE.getValue(), e.getMessage());
+            return Page.ERROR.getValue();
         }
-        return Page.ERROR.getValue();
     }
 }

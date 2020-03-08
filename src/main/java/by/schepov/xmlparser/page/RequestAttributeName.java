@@ -2,7 +2,7 @@ package by.schepov.xmlparser.page;
 
 public enum RequestAttributeName {
     RESULT("result"),
-    FILE("file");
+    ERROR_MESSAGE("errorMessage");
 
     private String value;
 

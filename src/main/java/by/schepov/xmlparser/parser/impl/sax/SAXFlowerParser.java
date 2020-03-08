@@ -33,7 +33,7 @@ public class SAXFlowerParser implements FlowerParser {
             parser.parse(inputStream, handler);
             return handler.getFlowers();
         } catch (SAXException | IOException e) {
-            throw new ParserException(e);
+            throw new ParserException("Parsing error!", e);
         }
     }
 }
